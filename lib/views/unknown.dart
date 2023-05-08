@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tray_clock/styles/palette.dart';
 
 class UnknownView extends StatelessWidget {
   const UnknownView({super.key});
@@ -8,21 +9,20 @@ class UnknownView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('未知页面'),
+        titleSpacing: 0,
+        title: const Text(
+          'Invalid Page',
+          style: TextStyle(color: Palette.b30, fontSize: 24),
+        ),
         leading: const Icon(Icons.error_outline),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton.icon(
-              onPressed: () {
-                Get.back();
-              },
-              icon: const Icon(Icons.arrow_back),
-              label: const Text('返回上一页'),
-            ),
-          ],
+        child: GestureDetector(
+          onTap: Get.back,
+          child: const Text(
+            'Go Back !',
+            style: TextStyle(color: Palette.b30, fontSize: 36),
+          ),
         ),
       ),
     );

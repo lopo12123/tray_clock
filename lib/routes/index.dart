@@ -13,7 +13,6 @@ abstract class MyRoutes {
 
 /// 未知页面
 final GetPage invalidPage = GetPage(
-  opaque: false,
   name: MyRoutes.invalid,
   page: () => const UnknownView(),
 );

@@ -71,6 +71,7 @@ class AppFrame extends StatelessWidget {
         boxShadow: [BoxShadow(color: Palette.b30, blurRadius: 1)],
       ),
       child: GestureDetector(
+        behavior: HitTestBehavior.translucent,
         onPanStart: (details) => windowManager.startDragging(),
         child: app,
       ),
