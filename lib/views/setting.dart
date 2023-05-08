@@ -13,7 +13,7 @@ class SettingView extends StatelessWidget {
           'Setting',
           style: TextStyle(color: Palette.b30, fontSize: 18),
         ),
-        leading: const Icon(Icons.error_outline),
+        leading: const Icon(Icons.settings_rounded, color: Palette.b30),
       ),
     );
   }
