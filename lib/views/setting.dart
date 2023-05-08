@@ -36,7 +36,11 @@ class SettingView extends GetView<_SettingController> {
         titleSpacing: 0,
         title: const Text(
           'Setting',
-          style: TextStyle(color: Palette.b30, fontSize: 18),
+          style: TextStyle(
+            color: Palette.b30,
+            fontSize: 18,
+            fontFamily: 'ZhuoKai',
+          ),
         ),
         leading: const Icon(Icons.settings_rounded, color: Palette.b30),
       ),

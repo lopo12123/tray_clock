@@ -98,6 +98,9 @@ flutter:
     - family: ZhuoKai
       fonts:
         - asset: fonts/ZhuoKai/Regular.ttf
+    - family: LED
+      fonts:
+        - asset: fonts/LED/UNIDREAMLED.ttf
 
 # 配置应用图标
 # $ flutter pub run flutter_launcher_icons

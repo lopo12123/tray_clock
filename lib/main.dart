@@ -62,7 +62,10 @@ class MyApp extends StatelessWidget {
             backgroundColor: Palette.b80,
           ),
           scaffoldBackgroundColor: Palette.b90,
-          fontFamily: 'ZhuoKai',
+          fontFamily: 'LED',
+          tooltipTheme: const TooltipThemeData(
+            textStyle: TextStyle(fontFamily: 'ZhuoKai', color: Palette.b30),
+          ),
         ),
         initialRoute: MyRoutes.entry,
         unknownRoute: invalidPage,
