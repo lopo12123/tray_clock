@@ -12,7 +12,7 @@ class UnknownView extends StatelessWidget {
         titleSpacing: 0,
         title: const Text(
           'Invalid Page',
-          style: TextStyle(color: Palette.b30, fontSize: 24),
+          style: TextStyle(color: Palette.b30, fontSize: 18),
         ),
         leading: const Icon(Icons.error_outline),
       ),

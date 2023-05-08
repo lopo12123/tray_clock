@@ -42,7 +42,10 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Clock',
         theme: ThemeData(
-          appBarTheme: const AppBarTheme(backgroundColor: Palette.b90),
+          appBarTheme: const AppBarTheme(
+            toolbarHeight: 36,
+            backgroundColor: Palette.b80,
+          ),
           scaffoldBackgroundColor: Palette.b90,
           fontFamily: 'ZhuoKai',
         ),
