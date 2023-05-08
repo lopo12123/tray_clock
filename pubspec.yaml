@@ -98,3 +98,13 @@ flutter:
     - family: ZhuoKai
       fonts:
         - asset: fonts/ZhuoKai/Regular.ttf
+
+# 配置应用图标
+# $ flutter pub run flutter_launcher_icons
+flutter_launcher_icons:
+  android: false
+  ios: false
+  windows:
+    generate: true
+    image_path: 'assets/launcher/clock.png'
+    icon_size: 256
