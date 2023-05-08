@@ -11,11 +11,8 @@ class EntryView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: GestureDetector(
-        onSecondaryTap: () {
-          print('onSecondaryTap');
-
-          Get.toNamed(MyRoutes.invalid);
-        },
+        onTap: () => Get.toNamed(MyRoutes.setting),
+        onSecondaryTap: () => Get.toNamed(MyRoutes.setting),
         child: Center(
           child: FlipClock(
             flipDirection: AxisDirection.down,
