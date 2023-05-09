@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:local_notifier/local_notifier.dart';
 import 'package:tray_clock/styles/palette.dart';
+import 'package:tray_clock/utils/notification_impl.dart';
 import 'package:window_manager/window_manager.dart';
 
 class _SettingController extends GetxController {
@@ -10,9 +12,11 @@ class _SettingController extends GetxController {
     if (isPinned.isTrue) {
       await windowManager.setAlwaysOnTop(false);
       isPinned(false);
+      NotificationImpl.showAlwaysOnTop(false);
     } else {
       await windowManager.setAlwaysOnTop(true);
       isPinned(true);
+      NotificationImpl.showAlwaysOnTop(true);
     }
   }
 
@@ -54,6 +58,19 @@ class SettingView extends GetView<_SettingController> {
               splashColor: Palette.transparent,
               onPressed: Get.back,
               icon: const Icon(Icons.reply, color: Palette.b30),
+            ),
+            IconButton(
+              tooltip: 'Countdown',
+              highlightColor: Palette.transparent,
+              splashColor: Palette.transparent,
+              onPressed: () async {
+                NotificationImpl.showCountdownEnd(
+                  Duration(seconds: 20).toString(),
+                );
+
+                print('rrrr');
+              },
+              icon: const Icon(Icons.hourglass_top, color: Palette.b30),
             ),
             IconButton(
               tooltip: 'Always on top',

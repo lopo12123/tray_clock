@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:local_notifier/local_notifier.dart';
 import 'package:tray_clock/routes/index.dart';
 import 'package:tray_clock/styles/palette.dart';
 import 'package:window_manager/window_manager.dart';
@@ -31,6 +31,7 @@ Future<void> setupSingleTonCfg(List<String> args) async {
     args,
     'tray_clock',
     onSecondWindow: (args) async {
+      print('[onSecondWindow] handled.');
       // 唤起并聚焦
       if (await windowManager.isMinimized()) await windowManager.restore();
       windowManager.focus();
@@ -38,11 +39,17 @@ Future<void> setupSingleTonCfg(List<String> args) async {
   );
 }
 
+/// 本地通知
+Future<void> setupLocalNotification() async {
+  await localNotifier.setup(appName: 'tray_clock');
+}
+
 Future<void> main(List<String> args) async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await setupWindowCfg();
   await setupSingleTonCfg(args);
+  await setupLocalNotification();
 
   runApp(const MyApp());
 }
