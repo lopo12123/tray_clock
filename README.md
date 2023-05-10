@@ -1,16 +1,33 @@
 # tray_clock
 
-a simple clock app.
+A simple clock.
 
-## Getting Started
+- For Windows users, obtain from `Release`, download and decompress and double-click `tray_clock.exe` to experience.
+- For Linux/macOS users, it is necessary to pull the source code and rerun the build command to generate platform
+  specific
+  executable files.
 
-This project is a starting point for a Flutter application.
+# screenshots
 
-A few resources to get you started if this is your first Flutter project:
+![](./screen_shots/pic1.png)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Default panel (a simple flip clock)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+![](./screen_shots/pic2.png)
+
+Settings panel (with **back**, **always-on-top** and **close** buttons)
+
+---
+
+![](./screen_shots/pic3.png)
+
+Tray panel (tooltip)
+
+---
+
+![](./screen_shots/pic4.png)
+
+Traypane (menu, both **left** and **right** clickable and contains **only** the **close** button (because it's toooooo
+simple))
