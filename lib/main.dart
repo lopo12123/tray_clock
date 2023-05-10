@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tray_clock/routes/index.dart';
 import 'package:tray_clock/styles/palette.dart';
+import 'package:tray_clock/utils/tray_mixin.dart';
 import 'package:tray_manager/tray_manager.dart';
 import 'package:window_manager/window_manager.dart';
 import 'package:windows_single_instance/windows_single_instance.dart';
@@ -14,6 +15,7 @@ Future<void> setupWindowCfg() async {
     size: Size(400, 150),
     center: true,
     alwaysOnTop: true,
+    skipTaskbar: true,
     backgroundColor: Palette.transparent,
     titleBarStyle: TitleBarStyle.hidden,
   );
@@ -71,6 +73,15 @@ class MyApp extends StatelessWidget {
         initialRoute: MyRoutes.entry,
         unknownRoute: invalidPage,
         getPages: validPages,
+        onInit: () async {
+          await trayMixin.setup();
+          trayManager.addListener(trayMixin);
+          print('[GetMaterialApp] onInit');
+        },
+        onDispose: () {
+          trayManager.removeListener(trayMixin);
+          print('[GetMaterialApp] onDispose');
+        },
       ),
     );
   }
